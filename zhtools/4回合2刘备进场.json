@@ -1,0 +1,72 @@
+{
+  "isPass" : 0,
+  "floorIndex" : 0,
+  "ctrlList" : [
+    {
+      "type" : 34,
+      "time" : 1
+    },
+    {
+      "isLock" : 0,
+      "typeName" : "设置镜头锁"
+    },
+    {
+      "type" : 18,
+      "dialogList" : [
+        {
+          "name" : "助手静静",
+          "soundFile" : "bgm\/1_8.mp3",
+          "text" : "<l c=FF6633>二连击<\/l>伤害还不够，让我们进一步打出<l c=FF6633>三连击<\/l>，让刘备来帮忙吧！",
+          "direction" : "right",
+          "type" : "echo",
+          "icon" : 99999,
+          "scale" : 0.65
+        }
+      ]
+    },
+    {
+      "appearType" : "传送",
+      "officerID" : 100102,
+      "isInControl" : true,
+      "type" : 20,
+      "pos" : 8,
+      "side" : 0
+    },
+    {
+      "type" : 38,
+      "eventID" : "收费测试_7三国刘备进场",
+      "eventString" : "三国战斗开始"
+    },
+    {
+      "isNotStop" : false,
+      "actor" : "battle.getActorByOfficerID(0, 100102)",
+      "type" : 17,
+      "text" : "当目标出现<l c=FF6633>击退<\/l>，我就会追击！"
+    },
+    {
+      "isLock" : 1,
+      "typeName" : "设置镜头锁"
+    },
+    {
+      "type" : 32,
+      "isLock" : false
+    },
+    {
+      "buttonOfficerID" : "100100",
+      "textForActor" : "见识下我们的桃园三连击吧！",
+      "headOffsetY" : 0,
+      "headSprFile" : "profile_1003",
+      "headOffsetX" : -110,
+      "type" : 19,
+      "findObjType" : "button",
+      "actorName" : "张 飞"
+    },
+    {
+      "type" : 38,
+      "eventID" : "收费测试_8三国张飞第二次大招",
+      "eventString" : "三国战斗张飞第二次大招"
+    }
+  ],
+  "checkPoint" : "回合开始",
+  "triggerCondition" : "当前回合==2"
+}
