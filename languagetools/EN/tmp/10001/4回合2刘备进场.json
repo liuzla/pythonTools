@@ -14,9 +14,9 @@
       "type" : 18,
       "dialogList" : [
         {
-          "name" : "助手静静",
+          "name" : "#100001#:",
           "soundFile" : "bgm\/1_8.mp3",
-          "text" : "<l c=FF6633>二连击<\/l>伤害还不够，让我们进一步打出<l c=FF6633>三连击<\/l>，让刘备来帮忙吧！",
+          "text" : "#100002#:",
           "direction" : "right",
           "type" : "echo",
           "icon" : 99999,
@@ -41,7 +41,7 @@
       "isNotStop" : false,
       "actor" : "battle.getActorByOfficerID(0, 100102)",
       "type" : 17,
-      "text" : "当目标出现<l c=FF6633>击退<\/l>，我就会追击！"
+      "text" : "當目標出現<l c=FF6633>擊退<\/l>，我就會追擊！"
     },
     {
       "isLock" : 1,
@@ -53,13 +53,13 @@
     },
     {
       "buttonOfficerID" : "100100",
-      "textForActor" : "见识下我们的桃园三连击吧！",
+      "textForActor" : "見識下我們的桃園三連擊吧！",
       "headOffsetY" : 0,
       "headSprFile" : "profile_1003",
       "headOffsetX" : -110,
       "type" : 19,
       "findObjType" : "button",
-      "actorName" : "张 飞"
+      "actorName" : "張 飛"
     },
     {
       "type" : 38,
