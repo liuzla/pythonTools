@@ -191,7 +191,7 @@ class ImportObj(object):
                 wfileJsonPath = os.path.join(writeFullFilePath, fileJsonName)
                 self.importFile(rfileJsonPath, wfileJsonPath)
 
-        print "翻译成功................."
+        print u"翻译成功................."
 
 
     def importFile(self, rFile, wFile):

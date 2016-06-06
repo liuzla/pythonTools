@@ -133,7 +133,7 @@ class ExportObj(object):
                 wfileJsonPath = os.path.join(writeFullFilePath, fileJsonName)
                 self.exportFile(rfileJsonPath, wfileJsonPath)
 
-        print "提取完成................."
+        print u"提取完成................."
 
 
     def doCopyFile(self):
