@@ -41,7 +41,7 @@
       "isNotStop" : false,
       "actor" : "battle.getActorByOfficerID(0, 100102)",
       "type" : 17,
-      "text" : "當目標出現<l c=FF6633>擊退<\/l>，我就會追擊！"
+      "text" : "#100003#:"
     },
     {
       "isLock" : 1,
@@ -53,13 +53,13 @@
     },
     {
       "buttonOfficerID" : "100100",
-      "textForActor" : "見識下我們的桃園三連擊吧！",
+      "textForActor" : "#100004#:",
       "headOffsetY" : 0,
       "headSprFile" : "profile_1003",
       "headOffsetX" : -110,
       "type" : 19,
       "findObjType" : "button",
-      "actorName" : "張 飛"
+      "actorName" : "#100005#:"
     },
     {
       "type" : 38,

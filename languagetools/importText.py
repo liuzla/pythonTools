@@ -114,7 +114,7 @@ class ImportObj(object):
                 bIndex, eIndex = matchObj.span()
                 self.importTextDic[line[bIndex:eIndex]] = line[eIndex::]
 
-            print "加载翻译文本成功...................."
+            print u"加载翻译文本成功...................."
 
         except:
             print traceback.print_exc()
@@ -148,7 +148,7 @@ class ImportObj(object):
                 bIndex, eIndex = matchObj.span()
                 self.cnTextDic[line[bIndex:eIndex]] = line[eIndex::]
 
-            print "加载简体文本成功...................."
+            print u"加载简体文本成功...................."
 
         except:
             print traceback.print_exc()

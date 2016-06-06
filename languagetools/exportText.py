@@ -56,6 +56,10 @@ class ExportObj(object):
         if os.path.exists(conf.LANGUAGE) is not True:
             os.makedirs(conf.LANGUAGE)
 
+        ''' 提取完成后的文本存放, 初始化 '''
+        languageFile = open(os.path.join(conf.LANGUAGE, conf.RESOURCE_LANGUAGE_FILENAME), 'w')
+        languageFile.close()
+
         fileUrl = os.path.join(conf.LANGUAGE, conf.LANGUAGE_TMP)
         if os.path.exists(fileUrl) is not True:
             ''' 创建一个 '''
@@ -165,7 +169,7 @@ class ExportObj(object):
             wf = open(wFile, 'w')
 
             ''' 提取完成后的文本存放的 '''
-            languageFile = open(os.path.join(conf.LANGUAGE, conf.RESOURCE_LANGUAGE_FILENAME), 'w')
+            languageFile = open(os.path.join(conf.LANGUAGE, conf.RESOURCE_LANGUAGE_FILENAME), 'a')
 
             ''' 一行一行的读, 并写入到文件中去 '''
             for line in rf:
