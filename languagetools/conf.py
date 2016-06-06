@@ -25,7 +25,7 @@
 LANGUAGE = 'EN'
 
 ''' 最原始的资源路径 '''
-RESOURCE_READ_DATA_PATH = ''
+RESOURCE_READ_DATA_PATH = 'CN'
 
 ''' 最后写入的资源路径 '''
 RESOURCE_WRITE_DATA_PATH = 'DATA'

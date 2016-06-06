@@ -183,6 +183,11 @@ class ExportObj(object):
                     if targetValue == None:
                         continue
 
+                    ''' 处理换行符 '''
+                    targetValue = targetValue.replace('\n', '\\n')
+                    print targetValue.find('\n')
+                    print "targetValue.....", targetValue, type(targetValue)
+
                     ''' 如果已经翻译完成了，直接替换掉 '''
                     languageValue = self.languageDic.get(targetValue.decode('utf-8'))
 
@@ -231,4 +236,8 @@ class ExportObj(object):
 
 if __name__ == '__main__':
     obj = ExportObj()
-    obj.do(conf.RESOURCE_READ_DATA_PATH)
+    line = '我……（刚那个梦还是先别说出来吧。）\\n没问题！那有时空秘钥的线索吗？'
+    line1 = line.replace('\\n', '\n')
+    print line1.replace('\n', '\\n')
+
+    # obj.do(conf.RESOURCE_READ_DATA_PATH)

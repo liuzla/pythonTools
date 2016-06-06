@@ -107,12 +107,12 @@ class ImportObj(object):
                 line = line.strip('\n')
                 matchObj = self.pattern.match(line)
                 if matchObj == None:
-                    print "转换字符串的格式错误（'#10001#:' 开头）........", line
+                    print u"转换字符串的格式错误（'#10001#:' 开头）........", line
                     raise
 
                 ''' 把字符串转换成dic, 然后那匹配到的字符串做key， value(后面的字符串) '''
                 bIndex, eIndex = matchObj.span()
-                self.importTextDic[line[bIndex:eIndex]] = line[eIndex::]
+                self.importTextDic[line[bIndex:eIndex]] = line[eIndex::].decode('utf-8')
 
             print u"加载翻译文本成功...................."
 
@@ -132,7 +132,6 @@ class ImportObj(object):
             languageFile = open(os.path.join(conf.LANGUAGE, conf.RESOURCE_LANGUAGE_BAK_FILENAME), 'r')
 
             ''' 一行一行的读, 读取进来, 构建一个匹配的模板 '''
-
             for line in languageFile:
                 if line == None or len(line) <= 0:
                     continue
@@ -141,7 +140,7 @@ class ImportObj(object):
                 line = line.strip('\n')
                 matchObj = self.pattern.match(line)
                 if matchObj == None:
-                    print "转换字符串的格式错误（'#10001#:' 开头）........", line
+                    print u"转换字符串的格式错误（'#10001#:' 开头）........", line
                     raise
 
                 ''' 把字符串转换成dic, 然后那匹配到的字符串做key， value(后面的字符串) '''
@@ -212,12 +211,15 @@ class ImportObj(object):
                     ''' 表示匹配到对应的文本，然后需要从dic中找对应的值 '''
                     replStr = self.importTextDic.get(matchObj.group())
                     if replStr == None:
-                        print "对应的文件：",  rFile
-                        print "内容：", line
-                        print "找不到对应的翻译后的文件", matchObj.group()
+                        print u"对应的文件：",  rFile
+                        print u"内容：", line
+                        print u"找不到对应的翻译后的文件", matchObj.group()
                         raise
 
-                    line = self.pattern.sub(replStr, line)
+                    ''' 转换换行符 '''
+                    newRepl = replStr.encode('utf-8')
+                    # newRepl = newRepl.replace('\n', '\\n')
+                    line = self.pattern.sub(newRepl, line)
 
                     ''' 保存到已经翻译的文本中去 '''
                     cnText = self.cnTextDic.get(matchObj.group())
@@ -227,7 +229,13 @@ class ImportObj(object):
                 if isinstance(line, unicode):
                     line = line.encode('utf-8')
 
-                ''' 需要进行写的操作'''
+                ''' 替换换行符，最后一个不替换 '''
+                count = line.count('\n')
+                if count > 1:
+                    ''' 替换掉多余的换行符 '''
+                    line = line.replace('\n', '\\n', count-1)
+
+                ''' 需要进行写的操作 '''
                 wf.write(line)
 
         except:
